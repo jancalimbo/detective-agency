@@ -8,15 +8,7 @@
             <ul class="navbar-nav ms-auto">
                 
                 @role('client')
-                {{-- <li class="nav-item">
-                    <a id="navbar-links" class="nav-link" href="{{url('/home')}}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a id="navbar-links" class="nav-link" href="{{url('/posts/recent-posts')}}">News Feed</a>
-                </li>
-                <li class="nav-item">
-                    <a id="navbar-links" class="nav-link" href="{{url('/authors')}}">Discover Users</a>
-                </li> --}}
+               
                 <li class="nav-item">
                     
                    <a id="navbar-links" class="nav-link" href="{{ route('home') }}"><i class="fa-solid fa-house"></i></a>
@@ -28,26 +20,18 @@
                    <a id="navbar-links" class="nav-link" href="{{ route('user-profile') }}"><i class="fa-solid fa-user"></i></a>  
                    
                 </li>
-                {{-- <li class="nav-item">
-                    
-                   <a id="navbar-links" class="nav-link" href="{{ route('cart') }}"><i class="fa-solid fa-cart-shopping"></i></a>
-                   
-                   
-                </li> --}}
-
                 
-                {{-- <li class="nav-item">
-                    <a id="navbar-links" class="nav-link" href="{{url('/logs')}}">Activity</a>
-                </li> --}}
-                {{-- <li class="nav-item">
-                    <a id="navbar-links" class="nav-link" href="{{url('/logout')}}">Logout &nbsp; <i class="fa-solid fa-right-to-bracket"></i></a>
-                </li> --}}
                 @endrole
 
                 @role('detective')
                     <li class="nav-item">
                         
                         <a id="navbar-links" class="nav-link" href="{{ route('all-cases') }}">All Cases</a>  
+                        
+                    </li>
+                    <li class="nav-item">
+                        
+                        <a id="navbar-links" class="nav-link" href="{{ route('all-users') }}">All Users</a>  
                         
                     </li>
 

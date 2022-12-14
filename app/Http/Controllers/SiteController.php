@@ -13,4 +13,7 @@ use Illuminate\Http\Request;class SiteController extends Controller
     public function userProfile(){
         return view('pages.site.user-profile');
     }
+    public function allUSers(){
+        return view('pages.site.users');
+    }
 }
