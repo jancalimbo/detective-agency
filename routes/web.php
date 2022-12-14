@@ -44,10 +44,10 @@ Route::group(['middleware'=> ['auth', 'verified']],function(){
     });
 
     Route::controller(SiteController::class)->group(function (){
-        Route::get('/home', 'home')->name('home');
-        Route::get('/cases', 'cases')->name('all-cases');
+        Route::get('/home', 'home')->name('home')->middleware('role:client');
+        Route::get('/cases', 'cases')->name('all-cases')->middleware('role:admin');
         Route::get('/profile', 'userProfile')->name('user-profile');
-        Route::get('/users', 'allUsers')->name('all-users');
+        Route::get('/users', 'allUsers')->name('all-users')->middleware('role:admin');
     });
     
 });
