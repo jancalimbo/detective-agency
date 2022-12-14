@@ -7,6 +7,8 @@ use Livewire\Component;
 
 class Users extends Component
 {
+    public $userId;
+    
     public function loadUsers(){
         $users = User::get();
 

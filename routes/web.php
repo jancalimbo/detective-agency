@@ -38,16 +38,17 @@ Route::group(['middleware'=> ['auth', 'verified']],function(){
             
             Route::get('/create', 'create')->name('file-a-case')->middleware('role:client');
             Route::get('/view/{casefile}', 'view')->name('view-case');
-            Route::get('/take/{casefile}', 'take')->name('take-case')->middleware('role:admin');
-            Route::get('/solve/{casefile}', 'solve')->name('solve-case')->middleware('role:admin');
+            Route::get('/take/{casefile}', 'take')->name('take-case')->middleware('role:detective');
+            Route::get('/solve/{casefile}', 'solve')->name('solve-case')->middleware('role:detective');
         });
     });
 
     Route::controller(SiteController::class)->group(function (){
         Route::get('/home', 'home')->name('home')->middleware('role:client');
-        Route::get('/cases', 'cases')->name('all-cases')->middleware('role:admin');
+        Route::get('/cases', 'cases')->name('all-cases')->middleware('role:detective');
         Route::get('/profile', 'userProfile')->name('user-profile');
-        Route::get('/users', 'allUsers')->name('all-users')->middleware('role:admin');
+        Route::get('/profile/{user}', 'specificUser')->name('specific-user');
+        Route::get('/users', 'allUsers')->name('all-users')->middleware('role:detective');
     });
     
 });

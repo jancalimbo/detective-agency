@@ -2,6 +2,6 @@
 
 @section('content')
 
-  <livewire:casefile.users/>
+  <livewire:casefile.users />
 
 @endsection

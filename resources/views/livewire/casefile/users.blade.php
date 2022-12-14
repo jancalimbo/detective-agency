@@ -18,9 +18,9 @@
                             {{ $user->name }}
                         </td>
                         <td>
-                            <button class="btn btn-info">
+                            <a class="btn btn-info" href="{{url('/profile',['user'=>$user->id]) }}">
                                 View
-                            </button>
+                            </a>
                             <button class="btn btn-info">
                                 Disable
                             </button>
