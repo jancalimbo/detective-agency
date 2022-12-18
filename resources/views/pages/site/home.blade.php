@@ -4,10 +4,8 @@
 
   <div class="home">
     <div class="container">
-      <div class="d-flex justify-content-center">
-        <div class="card">
-          We'll uncover the truth for you.
-        </div>
+      <div class="d-flex justify-content-center ">
+       
       </div>
     </div>
    
@@ -21,7 +19,7 @@
       background-size: cover;
     }
     .home .container div .card {
-      margin-top: 68vh;
+      /* margin-top: 68vh; */
       background: rgba(0, 0, 0, 0.538);
       border-radius: 10px;
       padding: 50px;

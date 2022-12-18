@@ -1,52 +1,66 @@
 <div>
-    @foreach ($file as $case)
-        <div class="container mt-5">
-            <div class="card">
-               <div class="card-header">
-                    <div class="d-flex justify-content-end">
-                        <h6><button class="btn btn-sm btn-primary">{{ $case->status }}</button></h6>
+    <div class="details-view">
+        @foreach ($file as $case)
+        <div class="container" style="padding: 70px;">
+            <div class="card" style="background-color: #000000e6; color: white; border-radius: 10px;">
+               <div class="card-header align-items-center" >
+                   <div class=" d-flex justify-content-center">
+                       <h1 class="text-center" style="">{{ $case->title }}</h1>
                     </div>
-                    <div class="">
-                        <h1 class="text-center">{{ $case->title }}</h1>
-                    </div>
+                    <hr>
                </div>
                <div class="card-body p-5">
                 {{ $case->description }}
                 <h6 class="mt-3"><a href="#">See files attached...</a></h6>
                </div>
 
-               <div class="card-footer">
-                <a class="btn btn-warning" href="{{url('/casefile/view',['casefile'=>$case->id]) }}">
-                    <i class=" fa-solid fa-eye"></i>
-                    <span>See details</span>
-                </a>
-                
+               <div class="card-footer"  >
+                <hr>
                 @if ($case->status == 'taken' || $case->status == 'solved')
-                    <a class="btn btn-warning disabled" href="{{url('/casefile/take',['casefile'=>$case->id]) }}" >
+                    <a class="btn disabled" style="background-color: #dccca3" href="{{url('/casefile/take',['casefile'=>$case->id]) }}" >
                         <span>Taken</span>
                     </a>
                     @else
 
-                    <a class="btn btn-warning" href="{{url('/casefile/take',['casefile'=>$case->id]) }}">
+                    <a class="btn" style="background-color: #dccca3" href="{{url('/casefile/take',['casefile'=>$case->id]) }}">
                         <span>Take</span>
                     </a>
                 @endif
                 
                  
                 @if ($case->status == 'solved')
-                    <a class="btn btn-warning disabled" href="{{url('/casefile/take',['casefile'=>$case->id]) }}" >
+                    <a class="btn disabled" style="background-color: #dccca3" href="{{url('/casefile/take',['casefile'=>$case->id]) }}" >
                         <span>Solved</span>
                     </a>
                     @else
 
-                    <a class="btn btn-warning" href="{{url('/casefile/solve',['casefile'=>$case->id]) }}">
+                    <a class="btn" style="background-color: #dccca3" href="{{url('/casefile/solve',['casefile'=>$case->id]) }}">
                         <span>Solve</span>
                     </a>
                 @endif
                </div>
             </div>
+            
+                <br>
+                <br>
+                <br>
+                <br>
 
+                <a class="btn btn-secondary" href="{{url('/cases') }}">
+                    <span>Return To Cases</span>
+                </a>
         </div>
     @endforeach
-    
+
+    </div>
+
+    <style>
+        .details-view{
+            width: 100%;
+            height: 90vh;
+            background-image: url('/desk.jpg');
+            background-size: cover;
+        }
+    </style>
 </div>
+

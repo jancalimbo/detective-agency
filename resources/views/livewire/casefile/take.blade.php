@@ -11,7 +11,7 @@
                 <div class="card-footer card-footer-delete">
                     <div class="d-flex justify-content-end">
                         <a class="btn btn-success" wire:click="takeCase()">Yes</a>
-                        <a class="btn btn-secondary mx-3" href="">No</a>
+                        <a class="btn btn-secondary mx-3" wire:click="no()">No</a>
                     </div>
                 </div>
             </div>

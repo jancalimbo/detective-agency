@@ -18,6 +18,10 @@ class Take extends Component
 
         return redirect('cases');
     }
+    public function no(){
+
+        return redirect('/cases');
+    }
     public function render()
     {
         return view('livewire.casefile.take');

@@ -6,8 +6,9 @@ use Livewire\Component;
 
 class User extends Component
 {
+
     public function render()
     {
-        return view('livewire.casefile.user');
+        return view('livewire.casefile.users');
     }
 }

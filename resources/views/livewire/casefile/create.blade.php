@@ -2,11 +2,11 @@
     <div class="container mt-5">
         <div class="container d-flex justify-content-center">
             <div id="" class="card w-50 s bg-light">
-              <div class="card-header bg-info">
+              <div class="card-header bg-dark text-info">
                   <h3 class="text-center m-2 ">Case Details</h3>
               </div>
               @csrf
-              <div class="card-body">
+              <div class="card-body bg-dark color-dark">
                 <div class="form-floating mb-3">
                   <input type="text" name="name" class="form-control" wire:model.defer="title" >
                   <label for="name">Title</label>  
@@ -22,7 +22,7 @@
                  
                 <div class="form-group mb-3 d-grid gap-2 d-md-flex justify-content-center mt-3">
                   <button id="" class="btn w-25 btn-info" type="submit" wire:click="add()">File</button>
-                  <a id="" class="btn w-25 btn-secondary text-light" type="submit" wire:click="" href="/">Back</a>
+                  <a id="" class="btn w-25 btn-secondary text-light" type="submit" wire:click="" href="{{ route('user-profile') }}">Back</a>
                 </div>
               </div>
             </form>
